@@ -1,3 +1,29 @@
 mixin nav()
+    -
+        var navData = [
+            {
+                name: "Афиша",
+                href: "#",
+            },
+            {
+                name: "О ресторане",
+                href: "#",
+            },
+            {
+                name: "Меню",
+                href: "#",
+            },
+            {
+                name: "Фотогалерея",
+                href: "#",
+            },
+            {
+                name: "Контакты",
+                href: "#",
+            }
+        ]
     +b.nav&attributes(attributes)
-        | nav
+        +e.UL.list
+            each item in navData
+                +e.item
+                    +e.link(href=item.href)= item.name

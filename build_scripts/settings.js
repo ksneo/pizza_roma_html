@@ -3,25 +3,25 @@ import path from 'path';
 const project_dir = path.dirname(__dirname);
 
 export const root = {
-    src: `${project_dir}/src`,
-    dist: `${project_dir}/dist`,
-    tmp: `${project_dir}/tmp`
+    src: path.join(project_dir, 'src'),
+    dist: path.join(project_dir, 'dist'),
+    tmp: path.join(project_dir, 'tmp')
 }
 
 export const paths = {
     src: {
-        root: `${root.src}`,
-        html: `${root.src}/html`,
-        js: `${root.src}/js`,
-        css: `${root.src}/css`,
-        static: `${root.src}/static`,
-        components: `${root.src}/components`
+        root: root.src,
+        html: path.join(root.src, 'html'),
+        js: path.join(root.src, 'js'),
+        css: path.join(root.src, 'css'),
+        static: path.join(root.src, 'static'),
+        components: path.join(root.src, 'components')
     },
     dist: {
-        root: `${root.dist}`,
-        js: `${root.dist}/js`,
-        css: `${root.dist}/css`,
-        font: `${root.dist}/fonts`
+        root: root.dist,
+        js: path.join(root.dist, 'js'),
+        css: path.join(root.dist, 'css'),
+        font: path.join(root.dist, 'fonts')
     },
     node: {
         modules: `${project_dir}/node_modules`
@@ -29,13 +29,13 @@ export const paths = {
 }
 export const resource = {
     src: {
-        pug: `${paths.src.html}/**/*.pug`,
+        pug: path.join(paths.src.html, '/**/*.pug'),
         webpack: {
-            babel: `${paths.src.js}/entry/**/*.js`
+            babel: path.join(paths.src.js, '/entry/**/*.js')
         },
-        sass: `${paths.src.css}/**/*.s+(a|c)ss`,
-        static: `${paths.src.static}/**/*`,
-        components: `${paths.src.components}`
+        sass: path.join(paths.src.root, '/**/*.s+(a|c)ss'),
+        static: path.join(paths.src.static, '/**/*.*'),
+        components: paths.src.components
     },
     vendor: {
         js: {

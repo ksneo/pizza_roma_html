@@ -71,7 +71,7 @@ gulp.task('build:webpack', () => {
       }
      }, webpack))
     .pipe(gulp.dest(paths.dist.js))
-    .pipe(browserSync.stream())
+    //.pipe(browserSync.stream())
 })
 
 // compile Sass -> CSS
@@ -82,7 +82,7 @@ gulp.task('build:sass', () => {
     .pipe($.concat('style.css'))
     .pipe($.pleeease())
     .pipe(gulp.dest(paths.dist.css))
-    .pipe(browserSync.stream())
+    //.pipe(browserSync.stream())
 })
 
 // copy Static Resource
@@ -109,10 +109,12 @@ gulp.task('server', () => {
     notify: false
   })
   // watch for source
-  gulp.watch(resource.src.pug,    ['build:pug'])
-  gulp.watch(resource.src.sass,   ['build:sass'])
-  gulp.watch(resource.src.static, ['build:static'])
-  gulp.watch(`${resource.src.components}/**/*.pug`, ['build:pug'], reload())
+  gulp.watch('src/html/*.pug', ['build:pug']);
+  gulp.watch(resource.sass, ['build:sass']);
+  console.log(resource.src.static);
+  gulp.watch(resource.src.static, ['build:static']);
+  //gulp.watch(`${resource.src.components}/**/*.pug`, ['build:pug'])
+  // gulp.watch(`${paths.dist.root}/*.html`).on("change", reload);
 })
 
 // append Resource Revision
