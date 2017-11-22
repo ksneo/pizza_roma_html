@@ -1,10 +1,11 @@
 import path from 'path';
 
 const project_dir = path.dirname(__dirname);
-
+const source_glob = 'src/';
+const dist_glob = 'dist/';
 export const root = {
-    src: path.join(project_dir, 'src'),
-    dist: path.join(project_dir, 'dist'),
+    src: path.join(project_dir, source_glob),
+    dist: path.join(project_dir, dist_glob),
     tmp: path.join(project_dir, 'tmp')
 }
 
@@ -27,15 +28,20 @@ export const paths = {
         modules: `${project_dir}/node_modules`
     }
 }
+// globs for watch
 export const resource = {
     src: {
-        pug: path.join(paths.src.html, '/**/*.pug'),
+        pug: [`${source_glob}/html/**/*.pug`, `${source_glob}/components/**/*.pug`],
+        html: `${source_glob}/html/**/*.pug`, //только то, что надо собрать
         webpack: {
-            babel: path.join(paths.src.js, '/entry/**/*.js')
+            babel: `${source_glob}/entry/**/*.js`
         },
-        sass: path.join(paths.src.root, '/**/*.s+(a|c)ss'),
-        static: path.join(paths.src.static, '/**/*.*'),
-        components: paths.src.components
+        sass: `${source_glob}/**/*.s+(a|c)ss`,
+        static: `${source_glob}/static/**/*.*`,
+        components: `${source_glob}/components`
+    },
+    dist: {
+        html: `${dist_glob}/**/*.html`
     },
     vendor: {
         js: {
