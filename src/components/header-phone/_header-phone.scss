@@ -1,0 +1,8 @@
+.header-phone {
+    display: block;
+    &__link {
+        display: block;
+        @include set-font-size(32px);
+        color: $white-text;
+    }
+}

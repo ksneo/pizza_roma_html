@@ -1,4 +1,9 @@
 .header {
-    display: block;
-    background-color: #000;
+    @extend .container;
+    &__row {
+        @include make-row();
+    }
+    &__book {
+        background-color: $primary-accent;
+    }
 }

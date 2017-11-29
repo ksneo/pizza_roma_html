@@ -1,0 +1,10 @@
+.button-with-icon {
+    display: flex;
+    justify-content: center;
+    &__icon {
+        width: 20px;
+        height: 20px;
+        align-self: center;
+        margin-right: 10px;
+    }
+}

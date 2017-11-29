@@ -1,0 +1,11 @@
+.header-callback {
+    display: flex;
+    @include set-font-size(14px);
+    @include png-icon-before('../images/viber-icon.png', 28px, 28px);
+    color: $white-text;
+    text-transform: uppercase;
+    line-height: 1.1;
+    span {
+        margin-left: 5px;
+    }
+}

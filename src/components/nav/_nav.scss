@@ -1,3 +1,10 @@
 .nav {
-    display: block;
+    &__list {
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+    }
+    &__item {
+
+    }
 }

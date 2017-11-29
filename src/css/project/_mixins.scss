@@ -1,0 +1,34 @@
+@function remify($value) {
+	$font-size-base-px: 16px !default;
+	$u: unit($value);
+	@if ($u is 'px') {
+        @return (($value / $font-size-base-px) + 0rem);
+	}
+	@else {
+		@return $value + $u;
+	}
+}
+
+@mixin set-font-size($value) {
+	font-size: $value;
+
+	// добавляем PX как подстраховку
+	@if ($value == "inherit") {
+		/* делаем если нет значения для шрифта */
+	}
+	@else {
+		font-size: remify($value);
+	}
+}
+
+@mixin png-icon-before($icon, $width: 10px, $height: 10px){
+	&::before {
+		display: inline-block;
+		content: "";
+		width: $width;
+		height: $height;
+		background-image: url($icon);
+		background-repeat: no-repeat;
+		vertical-align: middle;
+	}
+  }

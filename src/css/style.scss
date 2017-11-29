@@ -1,4 +1,7 @@
-@import '../components/_block-import.scss';
+@import './project/variables';
+@import './project/mixins';
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import '../components/block-import';
 
 body {
     color: blue;
