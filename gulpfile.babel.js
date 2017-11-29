@@ -85,9 +85,12 @@ gulp.task('server', () => {
     notify: false
   })
   // watch for source
-  gulp.watch(resource.src.pug, ['build:pug']);
-  gulp.watch(resource.src.sass, ['build:sass']);
-  gulp.watch(resource.src.static, ['build:static']);
+  function errorHandler(err) {
+    console.log(err.toString());
+  }
+  gulp.watch(resource.src.pug, ['build:pug']).on('error', errorHandler);
+  gulp.watch(resource.src.sass, ['build:sass']).on('error', errorHandler);
+  gulp.watch(resource.src.static, ['build:static']).on('error', errorHandler);
 })
 
 // append Resource Revision
