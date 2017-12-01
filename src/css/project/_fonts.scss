@@ -1,0 +1,41 @@
+@import './font-awesome/fa-variables';
+@import './font-awesome/fa-path';
+@import './font-awesome/fa-icon';
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/RobotoRegular.eot');
+    src: local('Roboto'),
+        url('../fonts/RobotoRegular.woff') format('woff'),
+            url('../fonts/RobotoRegular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/RobotoBold.eot');
+    src: local('Roboto'),
+        url('../fonts/RobotoBold.woff') format('woff'),
+            url('../fonts/RobotoBold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto Condensed';
+	src: url('../fonts/RobotoCondensedBold.eot');
+    src: local('Roboto Condensed'),
+        url('../fonts/RobotoCondensedBold.woff') format('woff'),
+            url('../fonts/RobotoCondensedBold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gagalin';
+	src: url('../fonts/Gagalin-Regular.eot');
+	src: local('Gagalin'), url('../fonts/Gagalin-Regular.woff') format('woff'), url('../fonts/Gagalin-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

@@ -2,15 +2,18 @@ include ../nav/nav.pug
 include ../button-with-icon/button-with-icon.pug
 include ../header-phone/header-phone.pug
 include ../header-callback/header-callback.pug
+include ../top-slider/top-slider.pug
 
 mixin header()
     +b.header&attributes(attributes)
-        +e.row
-            +e.A.logo(href="/")
-                +e.IMG.logo-img(src="images/logo.png")
-            +e.inner
-                +button-with-icon('Забронировать столик', '#', 'icon-wedding-dinner').__book-btn
-                +header-callback
-                +header-phone
-                +nav.__nav
-                +button-with-icon('Заказать пиццу', '#', 'icon-pizza-top').__order-btn
+        +e.container
+            +e.row
+                +e.A.logo(href="/")
+                    +e.IMG.logo-img(src="images/logo.png")
+                +e.inner
+                    +button-with-icon('Забронировать столик', '#', 'icon-wedding-dinner').__book-btn
+                    +header-callback
+                    +header-phone
+                    +nav.__nav
+                    +button-with-icon('Заказать пиццу', '#', 'icon-pizza-top').__order-btn
+            +top-slider

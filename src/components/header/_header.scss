@@ -1,9 +1,42 @@
 .header {
-    @extend .container;
+    background-image: url('../images/slider/top-slider1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    &__container {
+        @extend %container;
+    }
     &__row {
         @include make-row();
     }
-    &__book {
+    &__inner {
+        display: flex;
+        max-width: 960px;
+        flex-grow: 2;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        padding-top: 10px;
+    }
+    &__book-btn {
         background-color: $primary-accent;
+        width: 290px;
+        color: #2b6711;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: -0.5px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        border-radius: 48px;
+    }
+    &__order-btn {
+        background-color: $secondary-accent;
+        width: 290px;
+        color: $white-text;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: -0.5px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        border-radius: 48px;
     }
 }
