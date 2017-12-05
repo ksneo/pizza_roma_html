@@ -56,6 +56,7 @@
     "gulp-slash": "~1.1.0",
     "gulp-uglify": "~3.0.0",
     "html-loader": "~0.4.0",
+    "jade-get-data": "^1.0.1",
     "node-sass": "^4.7.2",
     "popper.js": "^1.12.9",
     "pug": "~2.0.0-rc.1",

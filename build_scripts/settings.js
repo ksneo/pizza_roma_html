@@ -16,7 +16,8 @@ export const paths = {
         js: path.join(root.src, 'js'),
         css: path.join(root.src, 'css'),
         static: path.join(root.src, 'static'),
-        components: path.join(root.src, 'components')
+        components: path.join(root.src, 'components'),
+        data: path.join(root.src, 'data')
     },
     dist: {
         root: root.dist,
