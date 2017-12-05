@@ -1,0 +1,9 @@
+mixin events-list()
+    - var events = getData('events-list.json');
+    +b.UL.events-list&attributes(attributes)
+        each event in events
+            +e.LI.item
+                +e.card
+                    +e.P.title= event.title
+                    +e.IMG.image(src=event.img alt='Event image')
+                    +e.P.text= event.text

@@ -1,5 +1,8 @@
 extends /components/layout-default/layout-default.pug
+include /components/events/events.pug
+include /components/top-slider/top-slider.pug
 
+block header
+  +top-slider
 block content
-  p test
-  p test12
+  +events

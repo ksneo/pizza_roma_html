@@ -1,0 +1,13 @@
+include ../events-list/events-list.pug
+
+mixin events()
+    +b.events&attributes(attributes)
+        +e.container
+            +e.H2.title Ближайшие события
+            +e.FORM.form(method='POST')
+                +e.INPUT.date(type='text' name='event_date')
+                +e.INPUT.count(type='text' name='event_count')
+                +e.INPUT.phone(type='text' name='event_phone')
+                +e.INPUT.email(type='text' name='event_email')
+                +e.BUTTON.event-submit Заказать билеты
+            +events-list

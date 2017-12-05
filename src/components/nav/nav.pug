@@ -1,27 +1,5 @@
 mixin nav()
-    -
-        var navData = [
-            {
-                name: "Афиша",
-                href: "#",
-            },
-            {
-                name: "О ресторане",
-                href: "#",
-            },
-            {
-                name: "Меню",
-                href: "#",
-            },
-            {
-                name: "Фотогалерея",
-                href: "#",
-            },
-            {
-                name: "Контакты",
-                href: "#",
-            }
-        ]
+    - var navData = getData('nav.json');
     +b.nav&attributes(attributes)
         +e.UL.list
             each item in navData

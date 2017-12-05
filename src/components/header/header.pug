@@ -2,7 +2,6 @@ include ../nav/nav.pug
 include ../button-with-icon/button-with-icon.pug
 include ../header-phone/header-phone.pug
 include ../header-callback/header-callback.pug
-include ../top-slider/top-slider.pug
 
 mixin header()
     +b.header&attributes(attributes)
@@ -16,4 +15,4 @@ mixin header()
                     +header-phone
                     +nav.__nav
                     +button-with-icon('Заказать пиццу', '#', 'icon-pizza-top').__order-btn
-            +top-slider
+            block header
