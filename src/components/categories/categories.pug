@@ -1,0 +1,12 @@
+include ../category-card/category-card.pug
+
+mixin categories()
+    - var categories =  getData("categories.json")
+    +b.categories&attributes(attributes)
+        +e.title Закажите самые вкусные блюда
+        +e.container
+            +e.UL.list
+                for category in categories
+                    +category-card(category).LI.item
+
+

@@ -1,0 +1,6 @@
+mixin category-card(category)
+    +b.category-card&attributes(attributes)
+        +e.P.title= category.title
+        +e.P.price= category.price
+        +e.image(src=category.img)
+        +e.P.text= category.text
