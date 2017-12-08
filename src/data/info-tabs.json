@@ -1,0 +1,42 @@
+[
+    {
+        "id": "aboutTab",
+        "title": "О нас",
+        "href": "infoAbout",
+        "tabPanel": "info-about",
+        "content" : {
+            "title": "Сеть ресторанов Roma Pizza",
+            "text": "about-left-text.md",
+            "img1": "images/about1.jpg",
+            "info": "",
+            "img2": "images/about2.jpg"
+        }
+    },
+    {
+        "id": "reviewsTab",
+        "title": "О нас",
+        "href": "tabReviews",
+        "tabPanel": "info-reviews",
+        "content" : {
+
+        }
+    },
+    {
+        "id": "jobsTab",
+        "title": "Вакансии",
+        "href": "tabJobs",
+        "tabPanel": "info-jobs",
+        "content" : {
+
+        }
+    },
+    {
+        "id": "partnersTab",
+        "title": "Вакансии",
+        "href": "tabPartners",
+        "tabPanel": "info-partners",
+        "content" : {
+
+        }
+    }
+]

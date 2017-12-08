@@ -1,0 +1,13 @@
+include ../include-md/include-md.pug
+
+mixin info-about(tab)
+    +b.info-about&attributes(attributes)
+        +e.content
+            +e.left
+                +e.H3.title= tab.content.title
+                +e.left-text
+                    +include-md(tab.content.text)
+            +e.right
+                +e.img-food(src=tab.content.img1)
+                +e.img-pizza(src=tab.content.img2)
+                +e.right-text!= tab.content.textInfo

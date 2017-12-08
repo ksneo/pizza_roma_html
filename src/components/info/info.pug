@@ -1,0 +1,17 @@
+include ../info-about/info-about.pug
+include ../info-reviews/info-reviews.pug
+include ../info-jobs/info-jobs.pug
+include ../info-partners/info-partners.pug
+
+
+mixin info()
+    - var tabs = getData('info-tabs');
+    +b.info&attributes(attributes)
+        +e.title О ресторане
+        +e.container
+            +e.UL.nav-tabs
+                for tab in tabs
+                    +e.LI.nav-item
+                        +e.A.nav-link(id=tab.id href="#" + tab.href data-toggle="tab")= tab.title
+            for tab in tabs
+                +#{tab.tabPanel}(tab).__tab
