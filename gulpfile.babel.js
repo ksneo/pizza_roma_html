@@ -2,8 +2,7 @@ import gulp from 'gulp';
 import gulpLoaderPlugins from 'gulp-load-plugins';
 import del from 'del';
 import path from 'path';
-import webpack from 'webpack';
-import webpackStream from 'webpack-stream';
+
 import runSequence from 'run-sequence';
 import browserSyncTool from 'browser-sync';
 import named from 'vinyl-named';
@@ -11,6 +10,7 @@ import RevAll from 'gulp-rev-all';
 import './build_scripts/build-pug';
 import './build_scripts/build-css';
 import './build_scripts/build-static';
+import './build_scripts/build-webpack';
 import {root, paths, resource} from './build_scripts/settings';
 
 const $ = gulpLoaderPlugins();
@@ -47,36 +47,6 @@ gulp.task('production', () => {
 gulp.task('revision', (callback) =>
   runSequence('revision:clean', 'revision:append', 'clean', 'revision:copy', 'revision:clean', callback)
 )
-
-// compile Webpack [ ES6(Babel) / Vue -> Multipage ]
-gulp.task('build:webpack', () => {
-  process.env.NODE_ENV = (production == true) ? 'production' : 'development'
-  if (production) plugins.push(new webpack.optimize.UglifyJsPlugin({compress: { warnings: false　}}))
-  return gulp.src([resource.src.webpack.babel])
-    .pipe(named())
-    .pipe($.plumber())
-    .pipe(webpackStream({
-      devtool: '#source-map',
-      output: {filename: '[name].js'},
-      watch: !production,
-      module: {
-        rules: [
-          {test: /\.js$/, use: 'babel-loader', exclude: /node_modules/},
-          {test: /\.vue$/, use: 'vue-loader', exclude: /node_modules/}
-        ],
-      },
-      resolve: {
-        modules: ['node_modules', paths.src.js],
-        extensions: ['*', '.js', '.vue'],
-        alias: {
-          vue: 'vue/dist/vue.common.js',
-          constants: `${paths.src.js}/constants`,
-        }
-      }
-     }, webpack))
-    .pipe(gulp.dest(paths.dist.js))
-    .pipe(browserSync.stream())
-})
 
 // run Development Web Server (BrowserSync) [localhost:3000]
 gulp.task('server', () => {

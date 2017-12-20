@@ -24,7 +24,8 @@
     "lodash": "~4.17.0",
     "moment": "~2.18.0",
     "superagent": "~3.5.0",
-    "vue": "^2.3.0"
+    "vue": "^2.3.0",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -65,6 +66,8 @@
     "run-sequence": "~1.2.0",
     "sass-loader": "~6.0.0",
     "template-html-loader": "~1.0.0",
+    "ts-loader": "^3.2.0",
+    "typescript": "^2.6.2",
     "vinyl-named": "~1.1.0",
     "vue-hot-reload-api": "~2.1.0",
     "vue-loader": "~12.1.0",
