@@ -1,3 +1,7 @@
+include ../button-with-icon/button-with-icon.pug
+
 mixin top-slider()
     +b.top-slider&attributes(attributes)
-        | top-slider
+        +e.title Живые концерты
+        +e.text Каждую среду, четверг, пятницу, и субботу<br>c 19:00 до 23:00
+        +e.button.icon-microphone Посмотреть афишу
